@@ -13,8 +13,9 @@ var View = React.createClass({
 
   render: function(){
     return(
-      <div>
-        <MainView selected={this.state.selected}/>
+      <div className="container">
+        <MainView handleSelect={this.handleSelect}
+                  selected={this.state.selected}/>
         <SidebarView handleSelect={this.handleSelect}/>
       </div>
     );

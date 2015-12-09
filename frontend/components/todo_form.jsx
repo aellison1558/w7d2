@@ -28,10 +28,10 @@ var TodoForm = React.createClass({
       <div>
         <h3>Add New Todo</h3>
 
-        <form onSubmit={this.handleSubmit}>
+        <form className="form-group" onSubmit={this.handleSubmit}>
           <label>
             Title:
-            <input name='title' onChange={this.handleTitle} value={title}></input>
+            <input name='title' className="form-control" onChange={this.handleTitle} value={title}></input>
           </label>
 
           <br/>
@@ -39,13 +39,13 @@ var TodoForm = React.createClass({
 
           <label>
             Body:
-            <textarea name='body' onChange={this.handleBody} value={body}></textarea>
+            <textarea name='body' className="form-control" onChange={this.handleBody} value={body}></textarea>
           </label>
 
           <br/>
           <input type='submit' value='Submit' ></input>
         </form>
-        
+
       </div>
     );
   }

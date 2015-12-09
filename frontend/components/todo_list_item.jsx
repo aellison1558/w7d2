@@ -26,11 +26,8 @@ var TodoListItem = React.createClass({
       <div>
         <h2 className="title" onClick={callback} data={todo}>
           {todo.title}
+          <DoneButton store={TodoStore} item={todo}/>
         </h2>
-
-        <div>{this.state.details}</div>
-
-        <DoneButton store={TodoStore} item={todo}/>
       </div>
     );
   }

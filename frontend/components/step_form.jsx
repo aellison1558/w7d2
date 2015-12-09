@@ -20,14 +20,14 @@ var StepForm = React.createClass({
 
   render: function(){
     return(
-      <form onSubmit={this.handleSubmit}>
+      <form className="form-group" onSubmit={this.handleSubmit}>
 
         <label>
           Step:
-          <textarea onChange={this.handleContent} value={this.state.content}></textarea>
+          <textarea className="form-control" onChange={this.handleContent} value={this.state.content}></textarea>
         </label>
-
-        <input type='submit' value='submit'></input>
+        <br/>
+        <input type='submit' value='Submit'></input>
       </form>
     );
   }

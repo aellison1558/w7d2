@@ -8,13 +8,13 @@ var StepListItem = React.createClass({
 
     StepStore.destroy(this.props.step.id, this.props.step.todo_id);
   },
-  
+
   render: function(){
     return(
-      <div>
+      <div className="step">
         {this.props.step.content}
         <DoneButton store={StepStore} item={this.props.step}/>
-        <button onClick={this.handleDelete}>Delete Step</button>
+        <button className="delete btn btn-danger" onClick={this.handleDelete}>Delete Step</button>
       </div>
     );
   }

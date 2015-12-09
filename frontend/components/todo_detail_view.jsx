@@ -9,10 +9,14 @@ var TodoDetailView = React.createClass({
     TodoStore.destroy(this.props.todo.id);
   },
 
+  componentWillUnmount: function(){
+    this.props.handleSelect("");
+  },
+
   render: function(){
     var todo = this.props.todo;
     return(
-      <div>
+      <div className="form-group" >
         <h1>{todo.title}</h1>
         <div className="body">
           {todo.body}
@@ -20,7 +24,7 @@ var TodoDetailView = React.createClass({
 
         <StepList todoId={todo.id}/>
 
-        <button onClick={this.handleDelete}>Delete Todo</button>
+        <button className="btn btn-danger" onClick={this.handleDelete}>Delete Todo</button>
       </div>
     );
   }

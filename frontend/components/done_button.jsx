@@ -9,9 +9,10 @@ var DoneButton = React.createClass({
 
   render: function(){
     var doneButtonText = this.props.item.done ? "Undo" : "Done";
+    var doneButtonClass = this.props.item.done ? "btn btn-warning" : "btn btn-success";
 
     return(
-      <button onClick={this.handleDone}>{doneButtonText}</button>
+      <button className={"done " + doneButtonClass} onClick={this.handleDone}>{doneButtonText}</button>
     );
   }
 });

@@ -13,14 +13,42 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap";
+ @import "bootstrap-sprockets";
 
+
+.container{
+  background-color: #ccc;
+  width: 100%;
+  padding: 0px;
+}
 
 .sidebar{
   float: left;
-  width: 25%;
+  width: 30%;
+  margin-left: 0px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-right: 1px solid gray;
+  background-color: gray;
+  height: 100%;
+  padding-bottom: 100%;
 }
 
 .main{
   float: right;
-  width: 75%;
+  width: 70%;
+  padding-right: 5%;
+  padding-left: 5%;
+  // background-color: #ccc;
+}
+
+.step{
+  padding-top: 20px;
+}
+
+.delete, .done {
+  float: right;
+  margin-right: 10px;
+  // display: inline;
 }
