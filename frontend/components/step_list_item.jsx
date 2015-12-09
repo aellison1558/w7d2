@@ -2,13 +2,13 @@ var React = require('react'),
     StepStore = require('../stores/step_store'),
     DoneButton = require('./done_button');
 
-
 var StepListItem = React.createClass({
   handleDelete: function(e){
     e.preventDefault();
 
     StepStore.destroy(this.props.step.id, this.props.step.todo_id);
   },
+  
   render: function(){
     return(
       <div>

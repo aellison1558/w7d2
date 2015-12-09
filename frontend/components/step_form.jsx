@@ -10,15 +10,18 @@ var StepForm = React.createClass({
   handleSubmit: function(e){
     e.preventDefault();
 
-    StepStore.create({content: this.state.content, todoId: this.props.todoId});
-    this.setState({content: ""});
+    StepStore.create({ content: this.state.content, todoId: this.props.todoId });
+    this.setState({ content: "" });
   },
+
   handleContent: function(e){
-    this.setState({content: e.target.value});
+    this.setState({ content: e.target.value });
   },
+
   render: function(){
     return(
       <form onSubmit={this.handleSubmit}>
+
         <label>
           Step:
           <textarea onChange={this.handleContent} value={this.state.content}></textarea>

@@ -9,20 +9,27 @@ var TodoListItem = React.createClass({
     return {details: ""};
   },
 
+  componentWillUnmount: function(){
+    this.setState({details: ""});
+  },
 
   toggleDetails: function(){
     var newDetails = this.state.details ? "" : <TodoDetailView todo={this.props.todo}/>;
-  this.setState({details: newDetails});
+
+    this.setState({details: newDetails});
   },
 
   render: function(){
     var todo = this.props.todo;
+    var callback = function(){this.props.handleSelect(todo);}.bind(this);
     return(
       <div>
-        <div className="title" onClick={this.toggleDetails}>
+        <h2 className="title" onClick={callback} data={todo}>
           {todo.title}
-        </div>
+        </h2>
+
         <div>{this.state.details}</div>
+
         <DoneButton store={TodoStore} item={todo}/>
       </div>
     );

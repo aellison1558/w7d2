@@ -9,7 +9,7 @@ var TodoList = React.createClass({
   },
 
   todosChanged: function(){
-    this.setState({todos: TodoStore.all()});
+    this.setState({ todos: TodoStore.all() });
   },
 
   componentDidMount: function(){
@@ -22,11 +22,15 @@ var TodoList = React.createClass({
   },
 
   render: function(){
+    var handler = this.props.handleSelect;
     var todos = TodoStore.all().map(function(todo, idx){
-      return <TodoListItem key={idx} todo={todo}/>;
+      return <TodoListItem handleSelect={handler}
+                           key={idx}
+                           todo={todo}/>;
     });
+
     return(
-      <div>
+      <div className="sidebar">
         {todos}
         <hr></hr>
         <TodoForm />

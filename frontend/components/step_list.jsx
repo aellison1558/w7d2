@@ -10,7 +10,8 @@ var StepList = React.createClass({
   },
 
   stepsChanged: function() {
-    this.setState({steps: StepStore.all(this.props.todoId)});
+    var steps = StepStore.all(this.props.todoId) || [];
+    this.setState({steps: steps});
   },
 
   componentDidMount: function(){
@@ -18,9 +19,14 @@ var StepList = React.createClass({
     StepStore.fetch(this.props.todoId);
   },
 
+  componentWillReceiveProps: function(){
+    StepStore.fetch(this.props.todoId);
+  },
+
   componentWillUnmount: function(){
     StepStore.removeChangedHandler(this.stepsChanged);
   },
+
   render: function(){
     var stepItems = this.state.steps.map(function(step, idx){
       return <StepListItem key={idx} step={step}/>;

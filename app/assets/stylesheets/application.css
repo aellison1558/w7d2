@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+
+.sidebar{
+  float: left;
+  width: 25%;
+}
+
+.main{
+  float: right;
+  width: 75%;
+}
